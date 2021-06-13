@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a final year CS Undergraduate at the [National University of Singapore](https://www.comp.nus.edu.sg), wherein I am part of the [University Scholar's Programme](https://www.usp.nus.edu.sg) and the [Turing Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/). I am also a research intern at the [DSO National Laboratories](https://www.dso.org.sg) working on probing multilingual embeddings under the supervision of [Dr Chieu](https://chaileon.github.io), [Prof Wee Sun](https://www.comp.nus.edu.sg/~leews/), and Lim Jing.
+I am a CS senior at the [National University of Singapore](https://www.comp.nus.edu.sg), wherein I am part of the [University Scholar's Programme](https://www.usp.nus.edu.sg) and the [Turing Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/). I am also a research intern at the [DSO National Laboratories](https://www.dso.org.sg) working on probing multilingual embeddings under the supervision of [Dr Chieu](https://chaileon.github.io), [Prof Wee Sun](https://www.comp.nus.edu.sg/~leews/), and Lim Jing.
 
 My research interest lies in the intersection of natural language processing and machine learning.
 ## News

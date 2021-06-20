@@ -1,7 +1,7 @@
 ---
-title: 'Crash Course on using Tembusu Clusters'
+title: 'Crash Course on using SoC Compute Clusters'
 date: 2021-01-17
-permalink: /posts/2021/01/using-tembu-clusters/
+permalink: /posts/2021/01/using-soc-compute-clusters/
 tags:
   - networks
 ---
@@ -17,9 +17,9 @@ ssh larrylaw@sunfire.comp.nus.edu.sg
 ssh xgpc2
 ```
 
-1. Guide to use [SoC VPN](https://dochub.comp.nus.edu.sg/cf/guides/network/vpn). 
+1. To skip tunneling, either use [ssh tunneling](https://stackoverflow.com/questions/57780250/does-vscode-remote-support-double-ssh) or [SoC VPN](https://dochub.comp.nus.edu.sg/cf/guides/network/vpn).
 2. Compute cluster hardware configuration [here](https://dochub.comp.nus.edu.sg/cf/guides/compute-cluster/hardware).
-3. Use RSA key to skip typing of password. Google `set up passwordless SSH login`.
+3. Use RSA key to skip typing of password. Guide [here](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/)
 
 ### Transfering Data
 ```

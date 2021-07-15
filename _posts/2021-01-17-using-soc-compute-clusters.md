@@ -60,7 +60,8 @@ echo "Go get em!"
 1. `pyenv` for python version and `pyvenv` for virtual environment
 2. `tmux` to keep process running after ending ssh session. Help [here](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session).
 3. `nvidia-smi` to check GPU usage (before sending jobs)
-4. Remote development on VSCode. Help [here](https://code.visualstudio.com/docs/remote/ssh)
+4. Remote development on VSCode. Help [here](https://code.visualstudio.com/docs/remote/ssh).
+5. Speed up computation (significantly)) by storing data and outputs in `/temp`.
 5. Run on specific GPU via prepending `CUDA_VISIBLE_DEVICES=2,3 python xxx.py`
 
 ![Comic](/images/comic.png)

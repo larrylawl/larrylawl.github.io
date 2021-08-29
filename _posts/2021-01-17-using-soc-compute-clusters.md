@@ -62,6 +62,7 @@ echo "Go get em!"
 3. `nvidia-smi` to check GPU usage (before sending jobs)
 4. Remote development on VSCode. Help [here](https://code.visualstudio.com/docs/remote/ssh).
 5. Speed up computation (significantly)) by storing data and outputs in `/temp`.
-5. Run on specific GPU via prepending `CUDA_VISIBLE_DEVICES=2,3 python xxx.py`
+6. View tensorboard on remote. Help [here](https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server).
+7. Run on specific GPU via prepending `CUDA_VISIBLE_DEVICES=2,3 python xxx.py`
 
 ![Comic](/images/comic.png)

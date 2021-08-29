@@ -44,13 +44,17 @@ This bash script echos the availability of specified nodes.
 
 echo "Checking all remote! /prays hard"
 
-declare -a arr=("xgpb0" "xgpc0" "xgpc1" "xgpc2" "xgpc3" "xgpc4" "xgpd0" "xgpd1" "xgpd4" "xgpf11" "cgpa1" "cpga2" "cpga3")
+declare -a nodes=("xgpc" "xgpd" "xgpg")
 
 rm output.txt
-for node in "${arr[@]}"
-do
-    echo "$node" >> output.txt
-    echo yes | ssh -o ConnectTimeout=10 "larrylaw@$node.comp.nus.edu.sg" nvidia-smi | grep "MiB /" >> output.txt
+
+for ((i = 0; i < 10; i++)); do
+    for node in "${nodes[@]}"
+    do
+        node_idx="${node}${i}"
+        echo "$node_idx" >> output.txt
+        echo yes | ssh -o ConnectTimeout=10 "larrylaw@$node_idx.comp.nus.edu.sg" nvidia-smi | grep "MiB /" >> output.txt
+    done
 done
 
 echo "Go get em!"

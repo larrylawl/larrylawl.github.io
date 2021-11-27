@@ -13,8 +13,6 @@ I am currently researching on Natural Language Processing (NLP) at [DSO National
 
 I have also built an automatic github issue labeller using NLP. The labeller is published in the [market place](https://github.com/marketplace/actions/auto-github-issue-labeller). 
 
-I am currently searching for full-time NLP engineer positions for 2022. 
-
 <!-- Purpose of news: latest update regarding my research, as it can be hard tracking what's new -->
 <!-- ## News
 `170521`: I've published my automatic github issue labeller in the [market place](https://github.com/marketplace/actions/auto-github-issue-labeller). 😄

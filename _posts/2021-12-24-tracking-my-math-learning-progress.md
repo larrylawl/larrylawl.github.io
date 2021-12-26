@@ -1,6 +1,6 @@
 ---
 title: 'Tracking My Math Learning Progress'
-date: 2022-12-22
+date: 2021-12-22
 permalink: /posts/2021/01/tracking-my-math-learning-progress/
 tags:
   - research

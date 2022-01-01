@@ -18,6 +18,18 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 ## Paper a day
 Papers which I enjoyed are in **bold**.
 
+### January
+<!-- 2/31 -->
+![6](https://progress-bar.dev/6)
+
+<!-- PCA -->
+
+<!-- Glove -->
+
+**[Word2Vec]**(https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf) The motivation is to turn each to vectors. There are two primary algorithms to do so: CBOW and Skip-Gram. CBOW tries to predict a center word from the surrounding context. For each word, we learn two vectors: 1) v (input vector), when the word is in the context and 2) u (output vector), when the word is in the center. Skip-Gram tried to predict the surrounding word from the given center word. 
+
+Training Word2Vec algorithms are expensive due to the large vocabulary size. Specifically, optimising the cost function and the softmax operator both involves looping through the vocabulary. We use negative sampling to circumvent the first problem and hierarchical softmax for the second.
+
 ### December
 <!-- 8/31 -->
 ![25](https://progress-bar.dev/25)

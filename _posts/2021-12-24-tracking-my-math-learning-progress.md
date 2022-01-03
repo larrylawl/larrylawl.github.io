@@ -27,4 +27,4 @@ Well... that's the rationale reason; I'm really doing this simply cause I love m
 ## I'm currently revising...
 **Probability and Statistics** (ST2132): Probability, Random Variables, Joint Distributions, Expected Values, Limit Theorems, Distributions Derived from the Normal Distribution, Estimation of Parameters and Fitting of Probability Distributions, Testing Hypothesis and Assessing Goodness of fit.
 
-![87](https://progress-bar.dev/87)
+![100](https://progress-bar.dev/100)

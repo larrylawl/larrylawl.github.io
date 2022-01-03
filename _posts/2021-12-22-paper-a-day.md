@@ -19,14 +19,34 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 Papers which I enjoyed are in **bold**.
 
 ### January
-<!-- 2/31 -->
-![6](https://progress-bar.dev/6)
+<!-- 3/31 -->
+![9](https://progress-bar.dev/9)
 
 <!-- PCA -->
+**[Principal Component Analysis](https://www.youtube.com/watch?v=FgakZw6K1QQ)** 
+
+**Summary**. The principal components of a collection of points in a real coordinate space are a sequence of $p$ unit vectors, where the $i$-th vector is the direction of a line that best fits the data while being orthogonal to the first $i-1$ vectors. Thus, the first vector is the line that best fits the data, while the second vector is the second best line while being orthotogonal to the first, etc.
+
+**Motivation.** PCA is often used for dimensionality reduction. We can reduce from $n$ dimensions to $k$ by selecting only the first $k$ principal components.
+
+**Algorithm.** 
+Calculate mean of all values. Shift data such that mean is at the origin
+![center and shift](/images/PCA/center-and-shift.png)
+
+Find the first principal component (PC1). That is, start by drawing a random line through the origin. Slowly rotate such that it either 1) minimizes distances from the data to the line or 2) maximises the distances from the projected points to the origin.
+![min or max](/images/PCA/min-or-max.png)
+
+Next, find PC2, the next best fitting line given that it goes through the origin and is perpendicular to PC2. Repeat steps 1 and 2 until $k$. 
+
+Suppose $k=2$. Project samples onto PC1 and PC2. Compute PCA plot based on projected samples.
+![reconstruction](/images/PCA/reconstruction.png)
+
+**How to evaluate each principal components?** Compute the sum of squared distances (SS) for the principal component. From point 2 of the algo, the larger this distance, the better. Thereafter, compute the variation and plot the scree plot. From the example below, limiting to two dimensions is good enough.
+![scree plots](/images/PCA/scree-plots.png)
 
 <!-- Glove -->
 
-**[Word2Vec]**(https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf) The motivation is to turn each to vectors. There are two primary algorithms to do so: CBOW and Skip-Gram. CBOW tries to predict a center word from the surrounding context. For each word, we learn two vectors: 1) v (input vector), when the word is in the context and 2) u (output vector), when the word is in the center. Skip-Gram tried to predict the surrounding word from the given center word. 
+**[Word2Vec](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)** The motivation is to turn each to vectors. There are two primary algorithms to do so: CBOW and Skip-Gram. CBOW tries to predict a center word from the surrounding context. For each word, we learn two vectors: 1) v (input vector), when the word is in the context and 2) u (output vector), when the word is in the center. Skip-Gram tried to predict the surrounding word from the given center word. 
 
 Training Word2Vec algorithms are expensive due to the large vocabulary size. Specifically, optimising the cost function and the softmax operator both involves looping through the vocabulary. We use negative sampling to circumvent the first problem and hierarchical softmax for the second.
 

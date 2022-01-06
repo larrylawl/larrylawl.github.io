@@ -19,8 +19,45 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 Papers which I enjoyed are in **bold**.
 
 ### January
-<!-- 3/31 -->
-![9](https://progress-bar.dev/9)
+<!-- 4/31 -->
+![12](https://progress-bar.dev/12)
+
+**[Kullback–Leibler divergence (KL divergence)](https://m.youtube.com/watch?v=SxGYPqCgJWM)**.
+The KL divergence, $D_{KL}(P \Vert Q)$, is a numerical measure of the distance between two probability distributions. For example, consider the following distributions:
+
+$$
+X \sim Ber(p), \quad Y \sim Ber(q)
+$$
+
+We are interested in the distance between the distributions of $X$ and $Y$. Suppose $p=0.5, q=0.1$, we can tell quite obviously that $Y$ is different from $X$ by simply sampling from $X$. But how do we quantify this distance?
+
+We can gauge this distance by computing the likelihood ratio:
+
+$$
+\frac{lik(p)}{lik(q)}
+$$
+
+If the distributions are similar, then the ratio should equal 1. The KL divergence builds on via:
+
+$$
+\frac{1}{n} log(\frac{lik(p)}{lik(q)}) = \frac{1}{n} log(\frac{p_1^{N_H} p_2^{N_T}}{q_1^{N_H} q_2^{N_T}})  
+\\ = \frac{1}{n} (N_H logp_1 + N_T log p_2 - N_H log q_1 - N_T log q_2)
+\\ = \frac{N_H}{n} logp_1 + \frac{N_T}{n} logp_2 - \frac{N_H}{n} log q_1 - \frac{N_T}{n} log q_2
+\\ \approx p_1 logp_1 + p_2 logp_2 - p_1 log q_1 - p_2 log q_2 \quad (n \rightarrow \infty)
+\\ = p_1 log \frac{p_1}{q_1} + p_2 log \frac{p_2}{q_2}
+$$
+
+This now follows the more general form (which you can refer to wiki for)
+
+$$
+D_{KL}(P \Vert Q) =  \sum_{x \in X} P(x) log(\frac{P(x)}{Q(x)})
+$$
+
+Some properties:
+1. $D_{KL}(P \Vert Q) \geq 0$
+2. $D_{KL}(P \Vert Q)  = 0$ if $P = Q$ almost everywhere.
+
+> Thanks to this awesome youtube channel for the explanation! Link [here](https://m.youtube.com/watch?v=SxGYPqCgJWM)
 
 <!-- PCA -->
 **[Principal Component Analysis](https://www.youtube.com/watch?v=FgakZw6K1QQ)** 
@@ -44,6 +81,7 @@ Suppose $k=2$. Project samples onto PC1 and PC2. Compute PCA plot based on proje
 **How to evaluate each principal components?** Compute the sum of squared distances (SS) for the principal component. From point 2 of the algo, the larger this distance, the better. Thereafter, compute the variation and plot the scree plot. From the example below, limiting to two dimensions is good enough.
 ![scree plots](/images/PCA/scree-plots.png)
 
+> Thanks Prof Andrew Ng for the explanation! Link [here](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 <!-- Glove -->
 
 **[Word2Vec](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)** The motivation is to turn each to vectors. There are two primary algorithms to do so: CBOW and Skip-Gram. CBOW tries to predict a center word from the surrounding context. For each word, we learn two vectors: 1) v (input vector), when the word is in the context and 2) u (output vector), when the word is in the center. Skip-Gram tried to predict the surrounding word from the given center word. 

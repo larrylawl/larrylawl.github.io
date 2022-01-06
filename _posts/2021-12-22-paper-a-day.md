@@ -81,7 +81,7 @@ Suppose $k=2$. Project samples onto PC1 and PC2. Compute PCA plot based on proje
 **How to evaluate each principal components?** Compute the sum of squared distances (SS) for the principal component. From point 2 of the algo, the larger this distance, the better. Thereafter, compute the variation and plot the scree plot. From the example below, limiting to two dimensions is good enough.
 ![scree plots](/images/PCA/scree-plots.png)
 
-> Thanks Prof Andrew Ng for the explanation! Link [here](https://www.youtube.com/watch?v=FgakZw6K1QQ)
+> Thanks Statquest for the explanation! Link [here](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 <!-- Glove -->
 
 **[Word2Vec](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)** The motivation is to turn each to vectors. There are two primary algorithms to do so: CBOW and Skip-Gram. CBOW tries to predict a center word from the surrounding context. For each word, we learn two vectors: 1) v (input vector), when the word is in the context and 2) u (output vector), when the word is in the center. Skip-Gram tried to predict the surrounding word from the given center word. 

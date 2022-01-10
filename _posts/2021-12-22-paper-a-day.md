@@ -19,8 +19,13 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 Papers which I enjoyed are in **bold**.
 
 ### January
-<!-- 4/31 -->
-![12](https://progress-bar.dev/12)
+<!-- 5/31 -->
+![15](https://progress-bar.dev/15)
+
+<!-- ELBO distance -->
+**[Coreference-Aware Dialogue Summarization](https://arxiv.org/abs/2106.08556)** (Zhengyuan Liu, Ke Shi, Nancy Chen. Coreference-Aware Dialogue Summarization, SIGDIAL 2021 (Best Paper Award)) This paper tackles the problem of text summarisation. Recent work focuses on single speaker content such as news articles but not dialogues. Dialogue summarisation is difficult because of 1) multiple speakers, 2) speaker role shifting and 3) ubiquitous referring expressions (e.g. speakers referring to themselves and each other). These challenges justify the usefulness of leveraging coreference information: when two or more expressions in a text refer to the same thing (e.g. Bill said he would come; the proper noun Bill and pronoun he refer to the same person). Large scale pretrained model are shown to implicitly model lower level linguistic knowledge such as PoS and syntactic structure. Thus, thus paper propose to add a graph neural layer that could characterize underlying coreference information structure, which can improve dialogue summarisation performance.
+
+
 
 **[Kullback–Leibler divergence (KL divergence)](https://m.youtube.com/watch?v=SxGYPqCgJWM)**.
 The KL divergence, $D_{KL}(P \Vert Q)$, is a numerical measure of the distance between two probability distributions. For example, consider the following distributions:
@@ -47,7 +52,7 @@ $$
 \\ = p_1 log \frac{p_1}{q_1} + p_2 log \frac{p_2}{q_2}
 $$
 
-This now follows the more general form (which you can refer to wiki for)
+This now follows the more general form (which you can refer to wiki for):
 
 $$
 D_{KL}(P \Vert Q) =  \sum_{x \in X} P(x) log(\frac{P(x)}{Q(x)})
@@ -57,7 +62,7 @@ Some properties:
 1. $D_{KL}(P \Vert Q) \geq 0$
 2. $D_{KL}(P \Vert Q)  = 0$ if $P = Q$ almost everywhere.
 
-> Thanks to this awesome youtube channel for the explanation! Link [here](https://m.youtube.com/watch?v=SxGYPqCgJWM)
+> Thanks to this awesome youtube channel for the explanation! Link [here](https://m.youtube.com/watch?v=SxGYPqCgJWM).
 
 <!-- PCA -->
 **[Principal Component Analysis](https://www.youtube.com/watch?v=FgakZw6K1QQ)** 
@@ -81,7 +86,7 @@ Suppose $k=2$. Project samples onto PC1 and PC2. Compute PCA plot based on proje
 **How to evaluate each principal components?** Compute the sum of squared distances (SS) for the principal component. From point 2 of the algo, the larger this distance, the better. Thereafter, compute the variation and plot the scree plot. From the example below, limiting to two dimensions is good enough.
 ![scree plots](/images/PCA/scree-plots.png)
 
-> Thanks Statquest for the explanation! Link [here](https://www.youtube.com/watch?v=FgakZw6K1QQ)
+> Thanks Statquest for the explanation! Link [here](https://www.youtube.com/watch?v=FgakZw6K1QQ).
 <!-- Glove -->
 
 **[Word2Vec](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)** The motivation is to turn each to vectors. There are two primary algorithms to do so: CBOW and Skip-Gram. CBOW tries to predict a center word from the surrounding context. For each word, we learn two vectors: 1) v (input vector), when the word is in the context and 2) u (output vector), when the word is in the center. Skip-Gram tried to predict the surrounding word from the given center word. 

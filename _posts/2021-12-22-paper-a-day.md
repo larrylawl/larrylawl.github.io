@@ -22,6 +22,8 @@ Papers which I enjoyed are in **bold**.
 <!-- 5/31 -->
 ![15](https://progress-bar.dev/15)
 
+> I'll be taking a break with semester resuming! Hoping to finish my schooling years on a high 😎
+
 <!-- ELBO distance -->
 **[Coreference-Aware Dialogue Summarization](https://arxiv.org/abs/2106.08556)** (Zhengyuan Liu, Ke Shi, Nancy Chen. Coreference-Aware Dialogue Summarization, SIGDIAL 2021 (Best Paper Award)) This paper tackles the problem of text summarisation. Recent work focuses on single speaker content such as news articles but not dialogues. Dialogue summarisation is difficult because of 1) multiple speakers, 2) speaker role shifting and 3) ubiquitous referring expressions (e.g. speakers referring to themselves and each other). These challenges justify the usefulness of leveraging coreference information: when two or more expressions in a text refer to the same thing (e.g. Bill said he would come; the proper noun Bill and pronoun he refer to the same person). Large scale pretrained model are shown to implicitly model lower level linguistic knowledge such as PoS and syntactic structure. Thus, thus paper propose to add a graph neural layer that could characterize underlying coreference information structure, which can improve dialogue summarisation performance.
 

@@ -19,10 +19,39 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 Papers which I enjoyed are in **bold**.
 
 ### January
-<!-- 5/31 -->
-![18](https://progress-bar.dev/18)
+<!-- 6/31 -->
+![24](https://progress-bar.dev/24)
 
 > I'll be taking a break with semester resuming! Hoping to finish my schooling years on a high 😎
+
+**[Taylor Series](https://www.youtube.com/watch?v=3d6DsjIBzJ4)**(3Blue1Brown)
+
+**Motivation.** To approximate non-polynomial function as a polynomial. Polynomials are in general easier to deal with (easier to compute, obtain derivatives etc).
+
+Concretely, consider the problem of approximating $cos(x)$ as a polynomial $P(x) = c_0 + c_1 x + c_2 x^2$. We can approximate them by ensuring their derivatives at $x=0$ are the same.
+
+$$
+cos(0) = 1 \\
+\frac{d cos(0)}{dx} = -sin(0) = 0 \\
+\frac{d^2 cos(0)}{dx^2} = -cos(0) = -1 
+$$
+
+To ensure their derviatives at $x=0$ are the same,
+
+
+$$
+P(0) = c_0 \implies c_0 = 1 \\
+\frac{dP}{dx} (0) = c_1 + 2c_2 (0) = c_1 \implies c_1 = 0 \\ 
+\frac{d^2 P}{dx^2} (0) = 2c_2 \implies c_2 = -\frac{1}{2}
+$$
+
+Thus, $cos(x) \approx 1 - \frac{1}{2} x^2$. Notice how every derivative order is independent of each other and provides a unique information (i.e. $P(0)$ provides the intersection point, $P'(0)$ provides the correct gradient, $P''(0)$ provides the correct rate etc.)
+
+![Taylor expansion examples](/images/papers/taylor-expansion-eg.png)
+
+
+**[Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/pdf/1904.12848.pdf)**(Qizhe Xie, Zihang Dai, Eduard Hovy, Minh-Thang Luong, Quoc V. Le, NeurIPS 2020)
+In a nutshell, consistency training methods simply regularize model predictions to be invariant to small noise applied to either input examples or hidden states. This framework makes sense intuitively because a good model should be robust to any small change in an input example or hidden states. This work observes that advanced data augmentation methods also work well with consistency training methods. They hence propose to substitute the traditional noise injection methods with high quality data augmentation methods in order to improve consistency training.
 
 **[Controllable Neural Dialogue Summarization with Personal Named Entity Planning](https://arxiv.org/pdf/2109.13070.pdf)**
 In dialogue summaries, perspective is important. For example, John and Tony's perspective prioritises different summaries from the same source text. 

@@ -15,4 +15,6 @@ I have also built an automatic github issue labeller using NLP. The labeller is 
 
 <!-- Purpose of news: latest update regarding my research, as it can be hard tracking what's new -->
 ## News
+`160122`: I've submitted a [short paper](https://drive.google.com/file/d/1ftrR9gj5Ta2BVRP6g6NTsrvtRWygH2Af/view?usp=sharing) for review at NAACL 2022 🥳! I owe much to my supervisors Dr Chieu and Prof Wee Sun.
+
 `170521`: I've published my automatic github issue labeller in the [market place](https://github.com/marketplace/actions/auto-github-issue-labeller). 😄

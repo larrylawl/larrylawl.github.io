@@ -18,6 +18,27 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 ## Paper a day
 Papers which I enjoyed are in **bold**.
 
+### May
+> Back after ending my semester!
+
+**[Deep Learning for Text Style Transfer: A Survey](https://arxiv.org/pdf/2011.00416.pdf)** (Di Jin, Zhijing Jin, Zhiting Hu, Olga Vechtomova, Rada Mihalcea, Computational Linguistics Journal 2022)
+
+**Goal.** The goal of text style transfer (TST) is to automatically control the style attributes of text while preserving the content. Formally, we dnote the target utterance as $\mathbf{x'}$ and the target discourse style attribute as $a'$. TST aims to model $p(\mathbf{x}'|a, \mathbf{x})$, where $\mathbf{x}$ is a given text carrying a source attribute value $a$. For example, 
+- Source sentence $\mathbf{x}$: *"Come and sit!"*. Source attribute *a*: *Informal*.
+- Target sentence $\mathbf{x'}$: *"Please consider taking a seat"*. Target attribute *a'*: *Formal*.
+
+Ideally, parallel data is available, which allows us to apply standard seq2seq models directly. However, parallel data is often not available.
+
+**Methods (on non-parallel data)**
+- **Disentanglement.** Disentagles text into its content and attribute in the latent space, and apply generative modelling.
+- **Prototype Editing.** 
+  - Step 1: Detect attribute markeres of *a* in the input sentence $\mathbf{x}$, and delete them, resulting in a content-only sentence.
+  - Step 2: Retrieve candidate attribute markers carrying the desired attribute $a'$.
+  - Step 3: Infill the sentence by adding new attribute markers and make sure the generated sentence is fluent. 
+- **Pseudo Data Construction.** Construct pseudo-parallel data and train the model as if in a supervised way.
+
+![TST survey overview](/images/papers/tst-survey.png)
+
 ### January
 <!-- 6/31 -->
 ![24](https://progress-bar.dev/24)

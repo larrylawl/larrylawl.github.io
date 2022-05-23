@@ -16,12 +16,22 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 <!-- Ethical/Environmental NLP? -->
 
 ## Paper a day
-Papers which I enjoyed are in **bold**.
+Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### May
 > Back after ending my semester!
 
-**[Deep Learning for Text Style Transfer: A Survey](https://arxiv.org/pdf/2011.00416.pdf)** (Di Jin, Zhijing Jin, Zhiting Hu, Olga Vechtomova, Rada Mihalcea, Computational Linguistics Journal 2022)
+[Disentangled Representation Learning for Non-Parallel Text Style Transfer](https://aclanthology.org/P19-1041.pdf) (Vineet John, Lili Mou, Hareesh Bahuleyan, Olga Vechtomova, ACL2019)
+- In this paper, they addressed the problem of **disentangling** the latent space of neural networks for text generation. Their model is built on an **autoencoder** that encodes a sentence to the latent space (vector representation) by learning to reconstruct the sentence itself. They would like the latent space to be disentangled with respect to different features, namely, style and content in their task.
+> **Disentanglement** is the problem of disentagling text into its content and attribute in the latent space, and apply generative modelling.
+- They design a systematic set of auxiliary losses, enforcing the separation of style and content latent spaces. 
+  - In particular, the multi-task loss operates on a latent space to ensure that the space does contain the information we wish to encode. 
+  - The adversarial loss, on the contrary, minimizes the predictability of information that should not be contained in a given latent space. 
+> Example with style-oriented loss. For multi-task loss for style, they build a softmax classifier on the style space to predict the style label. In the paper, the style space is sentiment classification, thus the style label is positive or negative. For adversarial loss for style, they train a separate classifier, called an adver- sary, that deliberately discriminates the style label based on the content vector c. Then, the encoder is trained to encode a content space from which its adversary cannot predict the style.
+
+- Earlier works only consider style space and ignore the content space, as it is hard to formalize what "content" actually refers to. In their work, they propose to approximate content information by bag-of-words (BoW) features, where they focused on style-neutral, non-stop words.
+
+[Deep Learning for Text Style Transfer: A Survey](https://arxiv.org/pdf/2011.00416.pdf) (Di Jin, Zhijing Jin, Zhiting Hu, Olga Vechtomova, Rada Mihalcea, Computational Linguistics Journal 2022)
 
 **Goal.** The goal of text style transfer (TST) is to automatically control the style attributes of text while preserving the content. Formally, we dnote the target utterance as $\mathbf{x'}$ and the target discourse style attribute as $a'$. TST aims to model $p(\mathbf{x}'|a, \mathbf{x})$, where $\mathbf{x}$ is a given text carrying a source attribute value $a$. For example, 
 - Source sentence $\mathbf{x}$: *"Come and sit!"*. Source attribute *a*: *Informal*.

@@ -14,12 +14,23 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 
 <!-- 1. Love math, 2. like problem domain (e.g. NLP, CV) - very exciting to try learn solutions -->
 <!-- Ethical/Environmental NLP? -->
+<!-- TODO: GAN paper || learn GAN -->
 
 ## Paper a day
 Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### May
 > Back after ending my semester!
+
+[So Different Yet So Alike! Constrained Unsupervised Text Style Transfer](https://openreview.net/pdf?id=4SoRR0ov-bn)
+
+[F][Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661.pdf) (Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio)
+- Deep learning primarily used in discriminative models. Deep generative models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.
+- in this framework, the generative model is pitted against an adversary: a discriminative model that learns to determine whether a sample is from the model distribution or the data distribution.
+  - The paper explores the special case when the generative model generates samples by passing random noise through a multilayer perceptron. 
+  - The discriminative is also a MLP that outputs the probability that the training data (which consist of real examples and samples from G) came from the data rather than the generator. 
+  - We train the discriminator to maximize the probability of assigning the correct label to both training examples and samples from G. We simultaneously train G to minimize $log(1-D(G(z)))$ (the converse of the discriminator's objective).
+  - We can then sample from the generative model using forward propagation.
 
 [Disentangled Representation Learning for Non-Parallel Text Style Transfer](https://aclanthology.org/P19-1041.pdf) (Vineet John, Lili Mou, Hareesh Bahuleyan, Olga Vechtomova, ACL2019)
 - In this paper, they addressed the problem of **disentangling** the latent space of neural networks for text generation. Their model is built on an **autoencoder** that encodes a sentence to the latent space (vector representation) by learning to reconstruct the sentence itself. They would like the latent space to be disentangled with respect to different features, namely, style and content in their task.

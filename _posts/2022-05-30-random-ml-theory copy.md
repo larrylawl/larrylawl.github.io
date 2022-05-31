@@ -1,7 +1,7 @@
 ---
 title: 'Random Machine Learning Theory'
 date: 2022-05-30
-permalink: /posts/2021/01/random-ml-theory/
+permalink: /posts/2022/05/random-ml-theory/
 tags:
   - research
 ---

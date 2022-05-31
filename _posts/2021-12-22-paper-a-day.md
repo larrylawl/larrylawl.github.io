@@ -22,11 +22,16 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 ### May
 > Back after ending my semester!
 
+[So Different Yet So Alike! Constrained Unsupervised Text Style Transfer](https://openreview.net/pdf?id=4SoRR0ov-bn)
+1. **Motivation.** Unsupervised text style transfer often fail to maintain constraints. For example, translating *"I really loved Murakami's book"* to *"Loved the movie"* does not correctly transfer the length, personal noun ("I"), and use a domain appropriate proper noun. 
+2. To introduce constraints, this paper propose to introduce an explicit regularisation component in the latent space of a GAN-based seq2seq network through two complementary losses.
+  1. The first loss is a contrastive loss that brings sentences that have similar constraints closer and pushes sentences that are dissimilar farther away.
+  2. The second loss is a cooperative classification loss wherein they encourage the encoders and the critic to cooperatively reduce a classification loss (here, encoder and critic takes the same notion as in the GAN paper). Conceretly, a classifier predicts the different constraints of the sentences (produced by either the encoder and critic) and the binary cross entropy loss is reduced.
+3. **Metrics.** TST metrics are difficult to measure (e.g. semantic similarity, fluency, transfer accuracy). To circumvent this, they typically use classifiers as evaluation (e.g. fluency is based on RoBERTA trained on COLA to indicate if a sentence is linguistically acceptable).
+
 [Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf) (Sarthak Jain, Byron C. Wallace, NAACL 2019)
 1. Assuming attention provides a faithful explanation for model predictions, we might expect the following properties to hold. (i) Attention weights should correlate with feature importance measures (e.g., gradient-based measures); (ii) Alternative (or counterfactual) attention weight configurations ought to yield corresponding changes in prediction (and if they do not then are equally plausible as explanations).
 2. We report that neither property is consistently observed by a BiLSTM with a standard attention mechanism in the context of text classification, question answering (QA), and Natural Language Inference (NLI) tasks.
-
-<!-- [So Different Yet So Alike! Constrained Unsupervised Text Style Transfer](https://openreview.net/pdf?id=4SoRR0ov-bn) -->
 
 [F][Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661.pdf) (Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio)
 - Deep learning primarily used in discriminative models. Deep generative models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.

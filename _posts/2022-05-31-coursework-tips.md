@@ -5,7 +5,6 @@ permalink: /posts/2022/05/undergraduate-study-tips/
 tags:
   - advice
 ---
-
 ### Motivation
 With yesterday's results release, I have finally graduated! Having been tested for many years of my life, here are some study tips I found useful for my own undergraduate studies. I hope they come in useful for a junior out there :).
 

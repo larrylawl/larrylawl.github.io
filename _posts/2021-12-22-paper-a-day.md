@@ -19,6 +19,38 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 ## Paper a day
 Papers which I enjoyed are in **bold** or prepended with [F].
 
+### June
+
+<!-- SBert -->
+[F]**[Siamese Neural Networks for One-shot Image Recognition](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf)**
+![SBERT](/images/papers/sbert.png)
+
+- **Problem.** Pair regression tasks are tasks where the input features consist of two pieces of text. For example, semantic textual similarity (STS). STS deals with how similar two pieces of texts are. This can take the form of assigning a score from 1 to 5.
+> E.g. "How are you?" and "How old are you?" are semantically different. "How old are you?" and "What is your age?" are semantically similar.
+- **Motivation.**
+  - (Too slow) Finding the pair with highest similarity requires going through all possible combinations.
+  - (Too poor) Mapping each sentence to a latent space such that semantically similar sentences are close. For example, using BERT's CLS embedding directly. However, this practice yields rather bad sentence embeddings, often worse than averaging GloVe embeddings.
+- **Key Idea**. Use siamese network to derive semantically meaningful sentence embeddings.
+  - For classification tasks, the siamese network concatenates the vectors u, v, and - importantly - the norm between them. The norm establishes a notion of distance between the vectors (Figure 1). I suspect this helps the model refine the relationship between the vectors u and v.
+  - The model is also finetuned on NLI dataset, which naturally requires the model to understand relationship between two sentences.
+  - Very strong results on unsupervised STS and Senteval (which directly evaluates sentence embeddings of SBERT)
+  - Interestingly, it did not offer improvemenets for supervised STS using a regression objective function (Figure 2). The regression objecctive function defer from BERT in that BERT passes both sentences to the network and use a simple regression method for the output.
+
+
+
+[Coupled hierarchical transformer for stance-aware rumor verifification in social media conversations](https://arxiv.org/pdf/1908.10084.pdf) 
+
+This post will mainly cover hierarchical transformers.
+
+**Motivation.**
+- First, most previous studies employed BERT to obtain token-level representations for sentence or paragraph understanding, while the paper's tasks (stance classification and rumour verification) primarily require sentence-level representa- tions for conversation thread understanding
+- 
+
+**How it works**.
+- Flatten all the posts in a conversation thread into a long sequence, and then decompose them evenly into multiple subthreads, each within the length constraint of BERT.
+- Next, each subthread is encoded with BERT to capture the local interactions between posts within the subthread.
+- A transformer layer is stacked on top of all the subthreads to capture the global interactions between posts in the whole conversation thread.
+
 ### May
 > Back after ending my semester!
 

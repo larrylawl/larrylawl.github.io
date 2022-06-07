@@ -7,6 +7,10 @@ tags:
 ---
 
 ## Machine Learning (ML)
+**[Siamese Networks]**()
+- A pair of pictures $$x^{(i)}, x^{(j)}$$ are fed to the same neural network. The goal is for the network to learn to differentiate them if they are different or similar.
+
+![siamese networks](/images/papers/siamese-networks.png)
 
 <!-- PCA -->
 **[Principal Component Analysis](https://www.youtube.com/watch?v=FgakZw6K1QQ)** 

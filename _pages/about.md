@@ -7,9 +7,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a CS senior at the [National University of Singapore (NUS)](https://www.comp.nus.edu.sg), wherein I am part of the [Turing Research Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/). My research interest includes Natural Language Processing and Machine Learning.
+I will be joining [DSO National Laboratories](https://www.dso.org.sg) as a Natural Language Processing (NLP) research engineer under the supervision of [Hai Leong](https://chaileon.github.io). My research interests include Natural Language Processing and Machine Learning.
 
-I will be joining [DSO National Laboratories](https://www.dso.org.sg) as a Natural Language Processing (NLP) research engineer under the supervision of [Hai Leong](https://chaileon.github.io).
+I graduated from [National University of Singapore](https://www.comp.nus.edu.sg) Computer Science. I was also part of the [Turing Research Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/).
 
 From 2021 to 2022, I researched on semi-supervised text classification at DSO under [Hai Leong](https://chaileon.github.io) and [Prof Wee Sun](https://www.comp.nus.edu.sg/~leews/). From 2020 to 2021, I researched on Bayesian Optimisation at NUS under [A/P Bryan Low](https://www.comp.nus.edu.sg/~lowkh/research.html). 
 

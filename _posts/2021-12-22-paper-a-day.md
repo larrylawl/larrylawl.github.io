@@ -37,7 +37,6 @@ Papers which I enjoyed are in **bold** or prepended with [F].
   - Interestingly, it did not offer improvemenets for supervised STS using a regression objective function (Figure 2). The regression objecctive function defer from BERT in that BERT passes both sentences to the network and use a simple regression method for the output.
 
 
-
 [Coupled hierarchical transformer for stance-aware rumor verifification in social media conversations](https://arxiv.org/pdf/1908.10084.pdf) 
 
 This post will mainly cover hierarchical transformers.

@@ -5,9 +5,10 @@ permalink: /posts/2022/05/random-ml-theory/
 tags:
   - research
 ---
+Just my personal notes!
 
 ## Machine Learning (ML)
-**[Siamese Networks]**(https://www.youtube.com/watch?v=6jfw8MuKwpI)
+**[Siamese Networks](https://www.youtube.com/watch?v=6jfw8MuKwpI)**
 - A pair of pictures $$x^{(i)}, x^{(j)}$$ are fed to the same neural network. The goal is for the network to learn to differentiate them if they are different or similar.
 
 ![siamese networks](/images/papers/siamese-networks.png)

@@ -21,6 +21,11 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### June
 
+[RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/pdf/1907.11692.pdf)
+- We present a replication study of BERT pre- training (Devlin et al., 2019), which includes a careful evaluation of the effects of hyperparmeter tuning and training set size.
+- Our modifications are simple, they include: (1) training the model longer, with bigger batches, over more data; (2) removing the next sentence prediction objective; (3) training on longer se- quences; and (4) dynamically changing the masking pattern applied to the training data
+- Collect a large new dataset (CC-News) of comparable size to other privately used datasets, to better control for training set size effects.
+
 <!-- SBert -->
 [F]**[Siamese Neural Networks for One-shot Image Recognition](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf)**
 ![SBERT](/images/papers/sbert.png)

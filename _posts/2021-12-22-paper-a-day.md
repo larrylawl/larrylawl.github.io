@@ -21,6 +21,24 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### June
 
+[F][Unsupervised Text Style Transfer using Language Models as Discriminators](https://arxiv.org/pdf/1805.11749.pdf)
+- Previous work on unsupervised TST adotps an encoder-decoder architecture with style discriminators to learn disentangled representations. The encoder takes a sentence as an input and outputs a style-independent content representation. The style-dependent decoder takes the content representation and a style representation and generates the transferred sentence.
+> For example, Shen et al. (2017) leverage an adversarial training scheme where a binary CNN-based discriminator is used to evaluate whether a transferred sentence is real or fake, ensuring that transferred sentences match real sentences in terms of target style. 
+- **However, in practice, the error signal from a binary classifier is sometimes insufficient to train the generator to produce fluent language, and optimization can be unstable as a result of the adversarial training step.**
+- We propose to **use an implicitly trained language model as a new type of discriminator**, replacing the more conventional binary classifier. 
+  - The language model calculates a sentence’s likelihood, which decomposes into a product of token-level conditional probabilities. 
+  - In our approach, rather than training a binary classifier to distinguish real and fake sentences, we train the language model to assign a high probability to real sentences and train the generator to produce sentences with high probability under the language model. 
+  - Because the language model scores sentences directly using a product of locally normalized probabilities, it may offer more stable and more useful training signal to the generator. Further, by using a continuous approximation of discrete sampling under the generator, our model can be trained using back-propagation in an end-to-end fashion.
+
+[F][Style Transfer from Non-Parallel Text by Cross-Alignment](https://www.cs.cmu.edu/~jeanoh/16-785/papers/shen-N2017-style.pdf)
+- Problem. TST with non-parallel text
+- Key Ideas
+  - Assume a **shared latent content distribution** across different text corpora. This shared latent distribution connects the two corporas without having them to be parallel!
+  - Concretely, we learn an encoder that takes a sentence and its original style indicator as input, and maps it to a style-independent content representation. This is then passed to a style-dependent decoder for rendering (see figure below).
+  -  Moreover, we reap additional information from cross-generated (style-transferred) sentences, thereby getting two distributional alignment constraints. For example, positive sentences that are style-transferred into negative sentences should match, as a population, the given set of negative sentences
+
+![cross alignment](/images/papers/cross-alignment.png)
+
 [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/pdf/1907.11692.pdf)
 - We present a replication study of BERT pre- training (Devlin et al., 2019), which includes a careful evaluation of the effects of hyperparmeter tuning and training set size.
 - Our modifications are simple, they include: (1) training the model longer, with bigger batches, over more data; (2) removing the next sentence prediction objective; (3) training on longer se- quences; and (4) dynamically changing the masking pattern applied to the training data

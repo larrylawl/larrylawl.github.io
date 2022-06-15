@@ -21,7 +21,37 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### June
 
-[F][Unsupervised Text Style Transfer using Language Models as Discriminators](https://arxiv.org/pdf/1805.11749.pdf)
+
+<!-- [Style Transfer in Text: Exploration and Evaluation] -->
+
+<!-- REINFORCE algo in RL -->
+
+[F][Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus](https://aclanthology.org/N19-1320.pdf)
+- Most works tackle the lack of parallel corpus by separating the content from the style of the text. Thereafter, it encodes sentences to style-independent representations, then uses a generator to combine the content with style.
+- However, these approaches are limited by their use of loss functions that **must be differentiable with respect to the model parameters**, since they rely on gra- dient descent to update the parameters. As such, they typically focus only on semantic and style metrics (which are differentiable). This is an important limitations because there are other non-differentiable metrics such as language fluency.
+- This work proposed a RL approach to TST. Key advantage of using RL is that they can use non-differentiable metrics to account for the quality of transferred sentences.
+
+**Reinforcement Learning**
+- The generator *G* is parameterized with a parameter set $\theta$, and we defined the expected reward of the current generator as $J(G_{\theta})$. The total expected reward is 
+
+$$
+J(G_{\theta}) = \sum^{T'}_{t=1} \mathbb{E}_{Y_{1:t-1}\sim G_{\theta}} [ \sum_{y_t \in V} \mathbb{P}_{\theta} (y_t | s_t) Q({s_t, y_t})]
+$$
+
+where $\mathbb{P}_{\theta} (y_t | s_t)$  is the likelihood of word $y_t$ given the current state $s_t$ and $Q({s_t, y_t})$ is the cumulative rewards that evaluate the quality of the sentences extended from $Y_{1:t}$.
+- The key is in the total reward $Q$,  which is defined as the sum of the word rewards
+
+$$
+Q(s_t, y_t) = \sum^{T'}_{r = t} \gamma^{\tau-t} r(s_t, y_t)
+$$
+
+where $r(s_t, y_t)$ is the reward of word $y_t$ at state $s_t$, $\gamma$ is the discounting factor so that the future rewards have decreasing weights since their estimates are less accurate.
+- By design, the non-differentiable evaluation modules only evaluate complete sentences instead of single words or partial sentences. Thus, we cannot obtain $r(s_t, y_t)$ directly from the evaluation modules at any time instance before the end of the sentence. To circumvent this, the paper uses roll out: the generator rolls out the given sub sentence $Y_{1:t}$ at time step $t$ to generate the complete sentences by sampling the remaining part of the sentence $\{Y_{t+1:T'}^n\}$. 
+- They score the action $y_t$ at state $s_t$ by the average score of the complete sentences rolled out from $Y_{1:t}$.
+
+<!-- add diagram -->
+
+[Unsupervised Text Style Transfer using Language Models as Discriminators](https://arxiv.org/pdf/1805.11749.pdf)
 - Previous work on unsupervised TST adotps an encoder-decoder architecture with style discriminators to learn disentangled representations. The encoder takes a sentence as an input and outputs a style-independent content representation. The style-dependent decoder takes the content representation and a style representation and generates the transferred sentence.
 > For example, Shen et al. (2017) leverage an adversarial training scheme where a binary CNN-based discriminator is used to evaluate whether a transferred sentence is real or fake, ensuring that transferred sentences match real sentences in terms of target style. 
 - **However, in practice, the error signal from a binary classifier is sometimes insufficient to train the generator to produce fluent language, and optimization can be unstable as a result of the adversarial training step.**

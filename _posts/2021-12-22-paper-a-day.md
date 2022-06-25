@@ -21,10 +21,58 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### June
 
+<!-- Style transfer through back-translatio -->
 
-<!-- [Style Transfer in Text: Exploration and Evaluation] -->
+<!-- lecture on RL -->
 
-<!-- REINFORCE algo in RL -->
+[Learning from Bootstrapping and Stepwise Reinforcement Reward: A Semi-Supervised Framework for Text Style Transfer](https://arxiv.org/pdf/2205.09324.pdf)
+- **Problem.** Supervised approaches for TST shows impressive generation quality, but parallel samples are often unavailable. RL is introduced to develop unsupervised models such that the rewards of content preservation and style conversion are used to optimize seq. generation. However, RL-based methods are often challenging to train in practice. For in- stance, the rewards have high variance during early stages when learning from scratch, which affects the training stability; and they cannot provide fine- grained learning signals as traditional token-level maximum likelihood estimation, since they are of- ten calculated on the entire generated sequence
+- Proposed a semi-supervised frame- work for text style transfer, and optimize it on training stability and signal fineness
+  - First trains model on small amount of parallel data for supervised learning.
+  - Bootstraps the training process with automatically consructed pseudo parallel data. Two pseudo pair matching methods are investigated: a lexical-based strategy, which is straightforward by calculating the token-level overlap; and a semantic-based strat- egy, which uses semantic similarity as criteria and would have better general potential.
+  - Furthermore, to obtain fine-grained signals for the RL-based sequence-to-sequence training pro- cess, we propose a stepwise reward re-weighting strategy. This is inspired by the observation that the style transfer weights are not uniform across tokens/spans in the source sentence: some tokens weigh more during attribute-guided text style trans- fer (Li et al., 2018). Therefore, instead of using the reward (e.g., style strength scores) calculated from the entire generated sentence (Luo et al., 2019; Lai et al., 2021), we use the token-level reward. Specifically, we extract attribute-related attentive scores from a pre-trained style discriminator, obtain a stepwise reward by re-weighting the sequence- level score, and utilize it as a fine-grained signal for policy gradient back-propagation.
+  - Attribute-related attentive scores refer to how attention weights correlate strongly with salient tokens (at least, based off their empirical observation). Thus they reweight the sequence-level reward with the stepwise scores.
+- **Reinforcement Learning.** Uses two rewards to enhance style rewriting and content preservation.
+  - Reconstruction reward. Backtranslated output to improve content preservation.
+
+  $$
+R_{cyclic} = score(G(y'), x) - score(G(\hat{y}), x)
+  $$
+
+  where $x$ is the backward target, $G(\hat{y})$ is the back translated output from greedy decoding generation $\hat{y}$ and $G(y')$ back-translated from sampling-based generation $y'$ over a multi-nominal distribution. BLEU is used for the score function.
+  - Style classification reward. Used a Transformer model trained for binary style classification to evaluate how well the transferred sentence y' matches the target style.
+
+  $$
+p(s_{style}) | y') = softmax(styleCLS(y', \phi))
+  $$
+
+  - The reward-based learning is conducted via Policy Gradient back-propagation.
+
+  $$
+R = \lambda_{cyclic} R_{cyclic} + \lambda_{style} (R_{style} - \gamma) \\
+\Delta_{\theta_G} J = E[ R \cdot \Delta_{\theta_G} log(P(y' |x, c; \theta_G))]
+  $$
+
+
+
+[Image Style Transfer using CNNs](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
+- **Motivation.** Most non-parametric algorithms only use low-level image features of the target image to inform the texture transfer.
+- Key Idea. 
+  - Texture transfer algorithm that constraints a texture synthesis methods by feature representations from CNNs. The feature representations of the CNNs are first analysed in figure 1.
+    - To visualize the image information that is encoded at different layers of the hierarchy, one performs gradient descent on a white noise image to find another image that matches the feature responses of the original image. That is, we change the original white noise image such that the feature representations in the particular layer of the CNN matches that (feature repr in the particular layer) of the original image.
+    - The process is similar for the style reconstruction. However, instead of matching the feature responses, we match the feature correlations between different feature responses. Specifically, the feature correlations are given by the gram matrix between the vectorised feature maps *i* and *j* in layer *l*.
+  - To transfer the style of an artwork onto a photograph we synthesise a new image that simultaneously matches the content representation of p and the style representation of a (Fig 2). Thus we jointly minimise the distance of the feature representations of a white noise image from the content representation of the photograph in one layer (the top layer, since it captures high-level information) and the style representation of the painting defined on a number of layers of the Convolutional Neural Network. 
+
+![image style transfer using cnns repr](/images/papers/image-style-transfer-cnns-repr.png)
+![image style transfer using cnns algo](/images/papers/image-style-transfer-cnns-algo.png)
+
+[F][Longformer: The Long-Document Transformer](https://arxiv.org/pdf/2004.05150.pdf)
+- Problem. Memory and computational reqs of self attention grows quadratically with sequence length, making it infeasible to process long sequences.
+- To address this limitation, we present Long-
+former, a modified Transformer architecture with a self-attention operation that scales linearly with the sequence length, making it versatile for processing long documents.
+- Longformer’s attention mechanism is a combination of a windowed local-context self-attention and an end task motivated global attention that encodes inductive bias about the task. Through ablations and controlled trials we show both attention types are essential – the local attention is primarily used to build contextual representations, while the global attention allows Longformer to build full sequence representations for prediction.
+  - WRT to figure 2, the local attention takes the form of the sliding window attention. Observe that each token only attends to a window of tokens surrounding it (as opposed to every other tokens)
+  - The global attention are pre-selected input locations which attends to all tokens across the sequence, and all tokens in the sequence attend to it. For example, the CLS token is selected for classification tasks.
 
 [F][Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus](https://aclanthology.org/N19-1320.pdf)
 - Most works tackle the lack of parallel corpus by separating the content from the style of the text. Thereafter, it encodes sentences to style-independent representations, then uses a generator to combine the content with style.
@@ -38,7 +86,7 @@ $$
 J(G_{\theta}) = \sum^{T'}_{t=1} \mathbb{E}_{Y_{1:t-1}\sim G_{\theta}} [ \sum_{y_t \in V} \mathbb{P}_{\theta} (y_t | s_t) Q({s_t, y_t})]
 $$
 
-where $\mathbb{P}_{\theta} (y_t | s_t)$  is the likelihood of word $y_t$ given the current state $s_t$ and $Q({s_t, y_t})$ is the cumulative rewards that evaluate the quality of the sentences extended from $Y_{1:t}$.
+where $P_{\theta} (y_t | s_t)$ is the likelihood of word $y_t$ given the current state $s_t$ and $Q({s_t, y_t})$ is the cumulative rewards that evaluate the quality of the sentences extended from $Y_{1:t}$.
 - The key is in the total reward $Q$,  which is defined as the sum of the word rewards
 
 $$

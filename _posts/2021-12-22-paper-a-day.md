@@ -19,7 +19,22 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 ## Paper a day
 Papers which I enjoyed are in **bold** or prepended with [F].
 
+### July
+
+
+[Style Transfer Through Back-Translation](https://arxiv.org/pdf/1804.09000.pdf)
+
+[SpanBERT](https://arxiv.org/pdf/1907.10529.pdf)
+- Motivation. Many NLP tasks involve reasoning about relationships between two or more spans of text. For example in extractive QA, determining that the "Dever Broncos" is a type of "NFL team" is critical for answering the question "Which NFL team won Super Bowl".
+- We present SpanBERT, a pre-training method that is designed to better represent and predict spans of text.
+  - Mask random contiguous spans rather than random individual tokens
+  - Introduce a novel *span-boundary objective* so the model learns to predict the entire masked span from the observed tokens at its boundary.Span-based masking forces the model to predict entire spans solely using the context in which they appear. Furthermore, the span-boundary objective encourages the model to store this span-level in- formation at the boundary tokens, which can be easily accessed during the fine-tuning stage.
+
+![spanbert](/images/papers/spanbert.png)
+
 ### June
+
+<!-- SpanBERT -->
 
 <!-- Style transfer through back-translatio -->
 

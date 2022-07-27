@@ -21,8 +21,28 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### July
 
+<!-- [Style Transfer Through Back-Translation](https://arxiv.org/pdf/1804.09000.pdf) -->
 
-[Style Transfer Through Back-Translation](https://arxiv.org/pdf/1804.09000.pdf)
+[F][On Variational Learning of Controllable Representations for Text without Supervision, ICML2020](https://arxiv.org/abs/1905.11975)
+- Problem. For VAEs => manipulate latent factors (cuz of TST) lead to sampling from low density regions of the aggregated posterior distributions. In other words, there are vacant regions in the latent code space. As a result, the decoding network is unable to process such manipulated latent codes.
+- Proposed to constrain the posterior mean to a learned probability simplex and only perform manipulation within this simplex.
+  - Two regularizers are added to the original objective of VAE. The first enforces an orthogonal structure of the learned probability simplex; the other en- courages this simplex to be filled without holes.
+
+[Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?, ACL 2022](https://openreview.net/pdf?id=cnRGMv-Ak7u)
+- **In-Context Learning.** 
+  - Perform a new task via inference alone by conditioning on a few input-label pairs (demonstrations) and making predictions for new inputs. 
+  - Here, conditioning can be as simply as concatenating the training data as demonstrations
+  - Important to note that there are no gradient updates; ICL is done during inference only.
+- **Motivation for ICL.** 
+  - Might not have resources to train model (e.g. finetuning), especially since models are getting too big
+  - API might only support inference.
+- **This paper found that replacing the labels in demonstrations with random labels barely hurts performance.** It's counterintuitive that the model does not rely on the input-label mapping to perform the task.
+  - Instead, the paper found that the label space, distributions of the input text, overall format is more important in ICL working.
+  - Meta-training with an in-context learning objective magnifies these effects
+
+![icl example](/images/papers/icl-example.png)
+
+
 
 [SpanBERT](https://arxiv.org/pdf/1907.10529.pdf)
 - Motivation. Many NLP tasks involve reasoning about relationships between two or more spans of text. For example in extractive QA, determining that the "Dever Broncos" is a type of "NFL team" is critical for answering the question "Which NFL team won Super Bowl".
@@ -33,12 +53,6 @@ Papers which I enjoyed are in **bold** or prepended with [F].
 ![spanbert](/images/papers/spanbert.png)
 
 ### June
-
-<!-- SpanBERT -->
-
-<!-- Style transfer through back-translatio -->
-
-<!-- lecture on RL -->
 
 [Learning from Bootstrapping and Stepwise Reinforcement Reward: A Semi-Supervised Framework for Text Style Transfer](https://arxiv.org/pdf/2205.09324.pdf)
 - **Problem.** Supervised approaches for TST shows impressive generation quality, but parallel samples are often unavailable. RL is introduced to develop unsupervised models such that the rewards of content preservation and style conversion are used to optimize seq. generation. However, RL-based methods are often challenging to train in practice. For in- stance, the rewards have high variance during early stages when learning from scratch, which affects the training stability; and they cannot provide fine- grained learning signals as traditional token-level maximum likelihood estimation, since they are of- ten calculated on the entire generated sequence

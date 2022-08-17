@@ -1,11 +1,10 @@
 ---
-title: 'A Paper A Day'
+title: 'Paper Reviews'
 date: 2021-12-22
-permalink: /posts/2021/01/a-paper-a-day/
+permalink: /posts/2021/01/paper-reviews/
 tags:
   - research
 ---
-Just me trying to inculcate a habit of reading papers consistently...
 
 ## Motivation
 As I step into this world of research, I realised I'm still in the midst of discovering what *I'm truly interested in*. To this end, I hope to read papers solely because I'm interested in it (instead of, say, to do literature review for my current research).
@@ -16,12 +15,18 @@ From a professional standpoint, I hope for this consistency pays off in terms of
 <!-- for publishing: defn helps in terms of inspiring me to ideate my own ideas -->
 <!-- for applying: need to know what to apply in order to apply them. -->
 
-## Paper a day
+## Paper Reviews
 Papers which I enjoyed are in **bold** or prepended with [F].
 
 ### July
 
 <!-- [Style Transfer Through Back-Translation](https://arxiv.org/pdf/1804.09000.pdf) -->
+
+[Unsupervised Text Style Transfer using Language Models as Discriminators, NeurIPS2018](https://proceedings.neurips.cc/paper/2018/file/398475c83b47075e8897a083e97eb9f0-Paper.pdf)
+- encoder-decoder architecture with style discriminators to learn disentangled representations. The encoder takes a sentence as an input and outputs a style-independent content representation. The style-dependent decoder takes the content representation and a style representation and generates the transferred sentence.
+- Shen et al. (2017) leverage an adversarial training scheme where a binary CNN-based discriminator is used to evaluate whether a transferred sentence is real or fake, ensuring that transferred sentences match real sentences in terms of target style. 
+- However, in practice, the error signal from a binary classifier is sometimes insufficient to train the generator to produce fluent language, and optimization can be unstable as a result of the adversarial training step
+- This paper proposes to replace the binary CNN-based discriminator with language models 
 
 [F][On Variational Learning of Controllable Representations for Text without Supervision, ICML2020](https://arxiv.org/abs/1905.11975)
 - Problem. For VAEs => manipulate latent factors (cuz of TST) lead to sampling from low density regions of the aggregated posterior distributions. In other words, there are vacant regions in the latent code space. As a result, the decoding network is unable to process such manipulated latent codes.

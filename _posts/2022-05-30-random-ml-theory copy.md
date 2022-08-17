@@ -8,6 +8,13 @@ tags:
 Just my personal notes!
 
 ## Machine Learning (ML)
+**[Autoencoders](https://www.deeplearningbook.org/contents/autoencoders.html)**
+- Autoencoders is a neural network that is trained to attempt to copy its inputto its output.
+  - Encoder $p_{encoder}(h|x)$ that maps the input to a latent space (of smaller dimensions).
+  - Decoder $p_{decoder}(x|h)$ that reconstructs the input from the latent space.
+  - Usually they arerestricted in ways that allow them to copy only approximately, and to copy onlyinput that resembles the training data. Because the model is forced to prioritizewhich aspects of the input should be copied, it often learns useful properties of the data.
+- Traditionally used for data compression. Recently used for generative modelling.
+
 **[Siamese Networks](https://www.youtube.com/watch?v=6jfw8MuKwpI)**
 - A pair of pictures $$x^{(i)}, x^{(j)}$$ are fed to the same neural network. The goal is for the network to learn to differentiate them if they are different or similar.
 

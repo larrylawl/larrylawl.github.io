@@ -7,6 +7,18 @@ tags:
 ---
 Just my personal notes!
 
+## Semi-Supervised Learning
+
+(Some tricks from [UDA](https://arxiv.org/abs/1904.12848)...)
+**Training Signal Annealing for Low-data Regime**. In semi-supervised learning, we often encounter a situation where there is a huge gap between the amount of unlabeled data and that of labeled data. Hence, the model often quickly overfits the limited amount of labeled data while still underfitting the unlabeled data. To tackle this difficulty, we introduce a new training technique, called Training Signal Annealing (TSA), which gradually releases the “training signals” of the labeled examples as training progresses. Intuitively, we only utilize a labeled example if the model’s confidence on that example is lower than a predefined threshold which increases according to a schedule.
+
+**Confidence-based masking.**  We find it to be helpful to mask out examples that the current model is not confident about. Specifically, in each minibatch, the consistency loss term is computed only on examples whose highest probability among classification categories is greater than a threshold $beta$.
+
+**Sharpening Predictions.** Since regularizing the predictions to have low entropy has been shown to be beneficial, we sharpen predictions when computing the target distribution on unlabeled examples by using a low Softmax temperature τ. Can learn more about softmax with temperature [here](https://stackoverflow.com/questions/58764619/why-should-we-use-temperature-in-softmax).
+
+**Domain-relevance Data Filtering.** To obtain data relevant to the domain for the task at hand, we adopt a common technique for detecting out-of-domain data. We use our baseline model trained on the in-domain data to infer the labels of data in a large out-of-domain dataset and pick out examples that the model is most confident about. Specifically, for each category, we sort all examples based on the classified probabilities of being in that category and select the examples with the highest probabilities.
+
+
 ## Machine Learning (ML)
 **[Autoencoders](https://www.deeplearningbook.org/contents/autoencoders.html)**
 - Autoencoders is a neural network that is trained to attempt to copy its inputto its output.

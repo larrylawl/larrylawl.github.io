@@ -7,6 +7,14 @@ tags:
 ---
 Just my personal notes!
 
+## Self-Supervised Learning
+**[Contrastive Loss](https://lilianweng.github.io/posts/2021-05-31-contrastive/)** 
+- The goal of contrastive representation learning is to learn such an embedding space in which similar sample pairs stay close to each other while dissimilar ones are far apart
+- Key Ingredients
+  - Heavy Data Augmentations
+  - Large Batch Size
+  - Hard Negative Mining
+
 ## Semi-Supervised Learning
 
 (Some tricks from [UDA](https://arxiv.org/abs/1904.12848)...)
@@ -20,6 +28,13 @@ Just my personal notes!
 
 
 ## Machine Learning (ML)
+**[Denoising Autoencoder]**(https://www.youtube.com/watch?v=t2NQ_c5BFOc)
+- **Problem.** If hidden layer is greater than input layer, it could just copy the input layer; hidden units does not extract meaningful representation.
+- **Idea.** Representation should be robust to introduction of noise.
+  - Loss function compares the reconstructed example with the noiseless input
+  - Autoencoder needs to learn how to distinguish noise in the noised input
+
+
 **[Autoencoders](https://www.deeplearningbook.org/contents/autoencoders.html)**
 - Autoencoders is a neural network that is trained to attempt to copy its inputto its output.
   - Encoder $p_{encoder}(h|x)$ that maps the input to a latent space (of smaller dimensions).

@@ -7,13 +7,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I will be joining [DSO National Laboratories](https://www.dso.org.sg) as a Natural Language Processing (NLP) research engineer under the supervision of [Hai Leong](https://chaileon.github.io). My research interests include Natural Language Processing and Machine Learning.
+I am a Research Engineer at [DSO National Laboratories](https://www.dso.org.sg). I'm interested in large language models.
 
 I graduated from [National University of Singapore](https://www.comp.nus.edu.sg) Computer Science. I was also part of the [Turing Research Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/).
 
-From 2021 to 2022, I researched on semi-supervised text classification at DSO under [Hai Leong](https://chaileon.github.io) and [Prof Wee Sun](https://www.comp.nus.edu.sg/~leews/). From 2020 to 2021, I researched on Bayesian Optimisation at NUS under [A/P Bryan Low](https://www.comp.nus.edu.sg/~lowkh/research.html). 
+Previously, I researched on semi-supervised text classification at DSO under [Hai Leong](https://chaileon.github.io) and [Prof Wee Sun](https://www.comp.nus.edu.sg/~leews/). I also researched on Bayesian Optimisation at NUS under [A/P Bryan Low](https://www.comp.nus.edu.sg/~lowkh/research.html). 
 
-I have also built an automatic github issue labeller using NLP. The labeller is published in the [market place](https://github.com/marketplace/actions/auto-github-issue-labeller). 
 
 <!-- Purpose of news: latest update regarding my research, as it can be hard tracking what's new -->
 ## News

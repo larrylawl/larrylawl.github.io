@@ -12,8 +12,8 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
 
-  - title: "Resume"
-    url: /files/larry_resume.pdf
+  # - title: "Resume"
+  #   url: /files/larry_resume.pdf
 
   # - title: "CV"
   #   url: /cv/

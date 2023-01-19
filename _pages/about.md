@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a research engineer at [DSO National Laboratories](https://www.dso.org.sg). I'm interested in large language models.
+I am a Member of Technical Staff at [DSO National Laboratories](https://www.dso.org.sg). I'm interested in large language models.
 
 I graduated from [National University of Singapore](https://www.comp.nus.edu.sg) Computer Science. I was also part of the [Turing Research Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/).
 

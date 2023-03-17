@@ -1,7 +1,7 @@
 ---
 title: 'Simple solution to training causal LMs with seq2seq objective'
-date: 2022-12-27
-permalink: /posts/2022/12/training-causallm-with-seq2seq/
+date: 2023-03-17
+permalink: /posts/2023/03/training-causallm-with-seq2seq/
 tags:
   - research
 ---
@@ -58,7 +58,7 @@ Notice how `### Instruction:` tells the model where the source string is while `
 
 **Increased GPU Memory usage**. To my understanding, the `input` and `labels` will now both be the concatenated source and target strings. In contrast for seq2seq models, the `input` will only be the source strings while the `labels` will only be the target strings. Thus this neat trick incurs additional GPU memory.
 
-**Packing is more intuitive with causal LM.** Packing is the act of packing training examples together. In causal LM, we can pack via
+**Packing is more intuitive with causal LM.** Packing is the act of packing training examples together to avoid padding. In causal LM, we can pack via
 
 ```
 (source->target)[IGNORE_INDEX](source->target)[IGNORE_INDEX]...(source->target)[IGNORE_INDEX])

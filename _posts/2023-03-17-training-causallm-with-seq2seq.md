@@ -64,7 +64,7 @@ Notice how `### Instruction:` tells the model where the source string is while `
 (source->target)[IGNORE_INDEX](source->target)[IGNORE_INDEX]...(source->target)[IGNORE_INDEX])
 ```
 
-Notice how the target string immediately comes after the source. In contrast, packing for seq2seq LM will look like
+Notice how the target string immediately comes after the source. In contrast, packing for encoder-decoder models will look like
 
 ```
 Input: (source)[IGNORE_INDEX](source)[IGNORE_INDEX]...(source)[IGNORE_INDEX]

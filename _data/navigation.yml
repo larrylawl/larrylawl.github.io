@@ -20,6 +20,9 @@ main:
         
   - title: "Blog Posts"
     url: /year-archive/
+
+  - title: "Open-source contributions"
+    url: /os-contributions/
   
   # - title: "Guide"
   #   url: /markdown/

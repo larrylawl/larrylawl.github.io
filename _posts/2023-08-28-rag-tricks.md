@@ -7,12 +7,12 @@ tags:
 ---
 
 ## Motivation
-Retrieval Augmented Generation (RAG) is a framework for retrieving facts from an external knowledge base to ground large language models (LLMs) on the most accurate, up-to-date information. RAG is increasingly popular in industry as it's simple to implement yet powerful. Here I'll share some tricks in improving RAG systems.
+Retrieval Augmented Generation (RAG) is a framework for retrieving facts from an external knowledge base to ground large language models (LLMs) on the most accurate, up-to-date information. RAG is increasingly popular in industry as it's simple to implement yet powerful. Here I'll share some tricks in improving RAG systems. 
 
 ## Use structured text over PDF text
 RAG systems typically preprocess the data as chunks of text, embed them, then store them in the search index. If the data is in PDF format, we need to additionally convert the PDF to text. However, this preprocessing can be noisy. If the data is in structured format, we can use a parser to get a much cleaner text. For example for `docx`, we can use `pandoc` to conver them to clean text.
 
-Here's the quantitative results for RAG on PDF documents:
+Here's the quantitative results for RAG on (my) PDF documents:
 
 | Metric            | Single Hop   | Table Related   | Multi Hop   | Weighted Avg   |
 | ----------------- | ------------ | --------------- | ----------- | --------------- |
@@ -36,7 +36,8 @@ Here's the results for RAG on `pandoc` documents:
 ## Prepending document title to your chunks
 Every document has a document title (eg file name) and is chunked. One way to improve retrieval is to prepend the document title to each chunk. 
 
-Here's the quanitative results without prepending:
+Here's the quantitative results without prepending:
+
 | Metric                                | Single Hop   | Table Related   | Multi Hop   | Weighted Avg   |
 | ------------------------------------- | ------------ | --------------- | ----------- | --------------- |
 | Cosine Similarity (Instructor-XL)    | 0.8114       | 0.8559          | 0.8667      | 0.8371          |
@@ -46,6 +47,7 @@ Here's the quanitative results without prepending:
 | Retrieval Recall                     | 0.8667       | 0.9091          | 0.4167      | 0.7179          |
 
 Here's the results with prepending:
+
 | Metric                                | Single Hop   | Table Related   | Multi Hop   | Weighted Avg   |
 | ------------------------------------- | ------------ | --------------- | ----------- | --------------- |
 | Cosine Similarity (Instructor-XL)    | 0.8381       | 0.8701          | 0.8135      | 0.8445          |

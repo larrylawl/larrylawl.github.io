@@ -1,13 +1,13 @@
 ---
-title: 'Simple tricks for Retrieval Augmented Generation (RAG) systems'
-date: 2023-05-04
+title: 'Simple tricks to improve Retrieval Augmented Generation (RAG) systems'
+date: 2023-08-28
 permalink: /posts/2023/03/rag-tricks/
 tags:
   - research
 ---
 
 ## Motivation
-Retrieval Augmented Generation (RAG) is a framework for retrieving facts from an external knowledge base to ground large language models (LLMs) on the most accurate, up-to-date information. RAG is increasingly popular in industry as it's simple to implement yet powerful. Here I'll share some tricks in improving RAG systems. 
+Retrieval Augmented Generation (RAG) is a framework for retrieving facts from an external knowledge base to ground large language models (LLMs) on the most accurate, up-to-date information. RAG is increasingly popular in industry as it's simple to implement yet powerful. Here I'll share some tricks to improve RAG systems. 
 
 ## Use structured text over PDF text
 RAG systems typically preprocess the data as chunks of text, embed them, then store them in the search index. If the data is in PDF format, we need to additionally convert the PDF to text. However, this preprocessing can be noisy. If the data is in structured format, we can use a parser to get a much cleaner text. For example for `docx`, we can use `pandoc` to conver them to clean text.

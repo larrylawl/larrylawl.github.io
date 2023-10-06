@@ -58,7 +58,7 @@ Just my personal notes!
 Calculate mean of all values. Shift data such that mean is at the origin
 ![center and shift](/images/PCA/center-and-shift.png)
 
-Find the first principal component (PC1). That is, start by drawing a random line through the origin. Slowly rotate such that it either 1) minimizes distances from the data to the line or 2) maximises the distances from the projected points to the origin.
+Find the first principal component (PC1). That is, start by drawing a random line through the origin. Slowly rotate such that it either 1) minimizes distances from the data to the line or 2) maximises the distances from the projected points to the origin. The two are equivalent because of pythagoras theorem. Let distance between point and origin be *c*, distance between point and line be *a*, and projection of point to line be *b*. Since $c^2 = a^2 + b^2$ (by pythagoras theorem) and $c^2$ is constant, minimising *a* is same as maximizing *b*.
 ![min or max](/images/PCA/min-or-max.png)
 
 Next, find PC2, the next best fitting line given that it goes through the origin and is perpendicular to PC2. Repeat steps 1 and 2 until $k$. 
@@ -68,6 +68,8 @@ Suppose $k=2$. Project samples onto PC1 and PC2. Compute PCA plot based on proje
 
 **How to evaluate each principal components?** Compute the sum of squared distances (SS) for the principal component. From point 2 of the algo, the larger this distance, the better. Thereafter, compute the variation and plot the scree plot. From the example below, limiting to two dimensions is good enough.
 ![scree plots](/images/PCA/scree-plots.png)
+
+**How to reconstruct plots for principle components?** For each point, project them to each principle component. Reconstruct plot from the remaining principle components. For example, if there are two principle components left (x and y-axis), then the sample which is on -1 on the x axis and 1 on the y-axis will take the point (-1, 1).
 
 > Thanks Statquest for the explanation! Link [here](https://www.youtube.com/watch?v=FgakZw6K1QQ).
 

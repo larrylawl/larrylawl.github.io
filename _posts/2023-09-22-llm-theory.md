@@ -8,8 +8,6 @@ tags:
 
 Awesome LLM theory articles I chanced upon
 
-## Training
-- [Transformer Math 101](https://blog.eleuther.ai/transformer-math/) by Eleuther AI.
-
-## Inference
+- [State of LLMs in 2023](https://docs.google.com/presentation/d/1636wKStYdT_yRPbJNrf8MLKpQghuWGDmyHinHhAKeXY/edit#slide=id.g27b7a2f6c01_0_48) by Hyung Won Chung
+- [Transformer Math 101](https://blog.eleuther.ai/transformer-math/) by Eleuther AI. 
 - [Transformer Inference Arithmetic](https://kipp.ly/transformer-inference-arithmetic/) by Kipply.

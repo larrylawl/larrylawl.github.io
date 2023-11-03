@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a Member of Technical Staff at [DSO National Laboratories](https://www.dso.org.sg). I work on applying large language models for defence problems.
+I am a machine learning engineer at [DSO National Laboratories](https://www.dso.org.sg). I trained large language models at scale, including finetuning (10-20B models) and pretraining (1-3B models on 1T tokens, work-in-progress). 
 
 I graduated from [National University of Singapore](https://www.comp.nus.edu.sg) Computer Science. I was also part of the [Turing Research Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/).
 

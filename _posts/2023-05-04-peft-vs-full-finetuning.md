@@ -17,6 +17,6 @@ For context, my research problem is to adapt english LLMs to other languages. I 
 ## Results
 ![Loss plots for finetuning vs peft](/images/peft-vs-finetuning.png)
 
-Here, we can see that full finetuning (blue) achieves a better loss than PEFT given the same compute budget! Seems like finetuning can - ironically - be more efficient that PEFT. Interesting!
+Here, we can see that full finetuning (blue) achieves a better loss than PEFT (orange) given the same compute budget! Seems like finetuning can - ironically - be more efficient that PEFT. Interesting!
 
 From my colleagues' experiments, turns out PEFT only speeds up 25% compared to finetuning despite training <1% of parameters.

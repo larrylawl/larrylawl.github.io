@@ -18,6 +18,9 @@ Compilation of tricks I find useful.
 - FusedAdam, implemented by torch natively or via deepspeed [here](https://deepspeed.readthedocs.io/en/latest/optimizers.html)
 - Fused SwiGLU from xformers.
 
+### Parallelism
+- **Difference between 3D parallelism and ZeRO-3**, explained [here](https://github.com/microsoft/DeepSpeed/discussions/1911~).
+
 ### Misc
 - **[Importance of CUDA versions](https://stackoverflow.com/questions/9727688/how-to-get-the-cuda-version)**. Ensure that cuda driver version (output from `nvidia-smi`) supports cuda toolkit version (output from `nvcc --version`). More info [here](https://docs.nvidia.com/deploy/cuda-compatibility/)
 - **If LLM is pre-trained in bf16, finetune it with bf16 (not fp16).** See more [h[here](https://huggingface.co/docs/transformers/v4.13.0/en/performance#bf16)
@@ -95,4 +98,5 @@ For Jupyter notebook + VScode, ensure that you've installed the following extens
   - [Create a dataset card](https://huggingface.co/docs/datasets/dataset_card) 
 
 ## Docker/Singularity
+- **Maping between Nvidia container version and CUDA Toolkit and Pytorch version**: Link [here](https://docs.nvidia.com/deeplearning/frameworks/pdf/PyTorch-Release-Notes.pdf)
 - **To run docker for multinode training, set up network bridge between containers.** See [here](https://docs.sylabs.io/guides/3.1/user-guide/networking.html).

@@ -99,3 +99,4 @@ For Jupyter notebook + VScode, ensure that you've installed the following extens
 ## Nvidia Containers
 - **Maping between Nvidia container version and CUDA Toolkit and Pytorch version**: Link [here](https://docs.nvidia.com/deeplearning/frameworks/pdf/PyTorch-Release-Notes.pdf)
 - **How to find appropriate container to download?** Use `nvidia-smi` to find driver version. Then find latest nvidia container that still supports the driver version.
+- **How to know if container is supported by driver?** Can check forward compatibility [here](https://docs.nvidia.com/deploy/cuda-compatibility/index.html#forward-compatibility-title).

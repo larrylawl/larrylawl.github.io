@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a machine learning engineer at [DSO National Laboratories](https://www.dso.org.sg). I trained large language models at scale, including finetuning (10-20B models) and pretraining (1-3B models on 1T tokens, work-in-progress). 
+I am a team lead at [DSO National Laboratories](https://www.dso.org.sg) pretraining multilingual large language models, contributing across data, training, evaluation and finetuning, and building agentic retrieval-augmented products. We continued pretrained a multilingual large language model from LLaMa-2 7B that's competitive with Sailor-7B from SEA AI Lab on both english and multilingual benchmarks.
 
 I graduated from [National University of Singapore](https://www.comp.nus.edu.sg) Computer Science. I was also part of the [Turing Research Programme](https://www.comp.nus.edu.sg/programmes/ug/cs/tp/).
 

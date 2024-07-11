@@ -19,7 +19,7 @@ For tensor parallelism, using the notations of the diagram below, tensors $A_1$,
 
 ![Data parallelism](/images/2024-07-11-diff-ip-shapes-3dparallelism/tp.png)
 
-Using Megatron-LM's code as reference,
+Using [Megatron-LM's code](https://github.com/NVIDIA/Megatron-LM/blob/main/megatron/training/utils.py#L302) as reference,
 ```py
 def _broadcast(item):
        if item is not None:

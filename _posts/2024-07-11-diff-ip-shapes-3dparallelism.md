@@ -5,7 +5,7 @@ permalink: /posts/2024/07/diff-ip-shapes-3dparallelism
 tags:
   - pretrain
 ---
-As I'm learning more about 3D parallelism, I wonder - suppose that every device takes in a batch of tensors where the tensors across devices are of different sizes, will 3D parallelism still work? Turns out, it works for data and pipeline parallelism, but not tensor parallelism.
+As I'm learning more about 3D parallelism, I wonder - suppose that every device takes in a batch of tensors where the tensors across devices are of different sizes, will 3D parallelism still work? Turns out, it works for data and pipeline parallelism, but tensor parallelism will need some work.
 
 For data parallelism, every device sees a different partition of the data, thus even if the tensors are of different sizes across devices, it's the same per device, so no shape issues here.
 
@@ -38,9 +38,9 @@ else:
   _broadcast(tokens)
 ```
 
-Notice how TP rank 0's tensor takes in the input tensors while the other devices initialize an empty tensor. TP rank 0 will then broadcast the input tensor to the other devices. When we do packing, we'll know the size of each tensor in advance, thus we can initialize the empty tensors with this known size. However when source tensor is of size only known during runtime, we need to first obtain the size from TP rank 0 before initializing the tensor.
+Notice how TP rank 0's tensor takes in the input tensors while the other devices initialize an empty tensor. TP rank 0 will then broadcast the input tensor to the other devices. When we do packing, we'll know the size of each tensor in advance, thus we can initialize the empty tensors with this known size. However when source tensor is of size is only known during runtime, we need to first obtain the size from TP rank 0 before initializing the tensor.
 
-To test my understanding, I simply randomized each batch's length - DP and PP works, and TP breaks.
+As my wise senior once said, the code is the only source of truth. So I simply randomized each batch's length within the code. DP and PP works (i.e. code compiles and training loss decreases), and TP breaks.
 
 ```py
 def _broadcast(item):

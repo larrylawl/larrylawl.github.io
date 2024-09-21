@@ -17,6 +17,9 @@ main:
 
   # - title: "CV"
   #   url: /cv/
+
+  - title: "Quotes"
+    url: /quotes/
         
   - title: "Blog Posts"
     url: /year-archive/

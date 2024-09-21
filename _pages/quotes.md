@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /quotes/
 title: "Quotes"
 excerpt: "Quotes from others I found inspiring."
 author_profile: true
@@ -8,7 +8,7 @@ redirect_from:
   - /quotes.html
 ---
 
-Collection of quotes from others I found inspiring. P.S. I find it interesting how I have so many quotes on work and so little on life. I should work on life more!
+Collection of quotes from others I found inspiring. I find it interesting how I have so many quotes on work and so little on life. I should work on life more!
 
 ## Life
 
@@ -50,13 +50,13 @@ Collection of quotes from others I found inspiring. P.S. I find it interesting h
 
 > “When you WIN TI, it’s dangerous to think that you are a TI winner. That great should follow automatically. Instead, you should focus on the things you did that led you to being a TI winner.” 
 
-**CEB**. 
+**Sébastien "Ceb" Debs**
 
 > "When you focus on the past, that's your ego: 'I did this. We were able to beat this team 4-0. I did this in the past. I won that in the past.' When I focus on the future, it's my pride: 'Yeah, next game, Game 5, I do this and this and this. I'm going to dominate.' That's your pride talking. It doesn't happen. You're right here.
 
 > "I kind of try to focus on the moment, in the present. That's humility. That's being humble. That's not setting no expectation. That's going out there, enjoying the game, competing at a high level. I think I've had people throughout my life that helped me with that. But that is a skill that I've tried to, like, kind of -- how do you say it, perfect it, master it. And it's been working so far. So I'm not going to stop."
 
-**Giannis**
+**Giannis Antetokounmpo**
 
 > Don’t be trying to do someone else’s role. You can learn about it, but don’t be trying to do it especially if you don’t have access to the information and resources required to perform it. Know your role and know what is required. To be a rockstar, get stuff done. Not talked about, not analyzed, not discussed, but done.
 

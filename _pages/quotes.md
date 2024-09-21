@@ -1,11 +1,9 @@
 ---
+layout: archive
 permalink: /quotes/
 title: "Quotes"
 excerpt: "Quotes from others I found inspiring."
 author_profile: true
-redirect_from: 
-  - /quotes/
-  - /quotes.html
 ---
 
 Collection of quotes from others I found inspiring. I find it interesting how I have so many quotes on work and so little on life. I should work on life more!

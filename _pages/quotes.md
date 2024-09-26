@@ -22,6 +22,10 @@ Collection of quotes from others I found inspiring. I find it interesting how I 
 
 **Colleague**. I found this funny as it was his reply when I asked him how his vacation went.
 
+> Before speaking, ask myself: is it true? is it necessary? is it kind?
+
+**Unknown**
+
 ## Work
 
 > A very common pattern for successful machine learning engineers ,strong job candidates, is to develop a T-shaped knowledge base. Meaning to have a broad understanding of many different topics in AI and very deep understanding in at least one area.

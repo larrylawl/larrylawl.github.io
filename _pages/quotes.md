@@ -18,6 +18,12 @@ Collection of quotes from others I found inspiring. I find it interesting how I 
 
 > "Before speaking, ask myself: is it true? Is it necessary? Is it kind?"
 
+> ""How lucky I am to have something that makes saying goodbye so hard" (Winnie The Pooh)
+
+> “People have forgotten this truth," the fox said. "But you mustn’t forget it. You become responsible forever for what you’ve tamed. You’re responsible for your rose.” (The Little Prince)
+
+> "“It is the time you have wasted for your rose that makes your rose so important.” (The Little Prince)
+
 ## Work 
 
 > "A very common pattern for successful machine learning engineers, strong job candidates, is to develop a T-shaped knowledge base. Meaning to have a broad understanding of many different topics in AI and very deep understanding in at least one area." (Andrew Ng)

@@ -24,6 +24,8 @@ Collection of quotes from others I found inspiring. I find it interesting how I 
 
 > "“It is the time you have wasted for your rose that makes your rose so important.” (The Little Prince)
 
+> After you kids came along, your mom, she said something to me I never quite understood. She said, "Now, we're just here to be memories for our kids." (Cooper)
+
 ## Work 
 
 > "A very common pattern for successful machine learning engineers, strong job candidates, is to develop a T-shaped knowledge base. Meaning to have a broad understanding of many different topics in AI and very deep understanding in at least one area." (Andrew Ng)

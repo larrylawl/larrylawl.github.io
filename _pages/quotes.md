@@ -10,6 +10,8 @@ Collection of quotes from others I found inspiring. I find it interesting how I 
 
 ## Life
 
+> "Conflict isn’t the enemy, disconnection is.”
+
 > "If you don’t respect your own boundaries, nobody will respect it" (Lee Yin). 
 
 > "In work, you are replaceable. But in life, you are the only son/husband/father... you are irreplaceable."

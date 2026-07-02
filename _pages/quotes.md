@@ -28,6 +28,8 @@ Collection of quotes from others I found inspiring. I find it interesting how I 
 
 > After you kids came along, your mom, she said something to me I never quite understood. She said, "Now, we're just here to be memories for our kids." (Cooper)
 
+> "Take care of your equipment, and your equipment will take care of you." (Yuan Bo)
+
 ## Work 
 
 > "A very common pattern for successful machine learning engineers, strong job candidates, is to develop a T-shaped knowledge base. Meaning to have a broad understanding of many different topics in AI and very deep understanding in at least one area." (Andrew Ng)

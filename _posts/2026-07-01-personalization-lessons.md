@@ -22,13 +22,12 @@ And by setting up GCG, you can slice and dice to find out campaigns which are no
 > Primer on the different modelling objectives that get increasingly close to the business objective. Credits: Julian King
 
 
-| **Approach**                      | **Key question**                                                                                       | **Theoretical problem** |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------- |
-| **Propensity modelling**          | *"What is the probability that a customer will do Y?"*                                                 | **P(churn               |
-| **Response modelling**            | *"What is the probability that a customer will do Y, if we contact them?"*                             | **P(churn               |
-| **Contextual response modelling** | *"What is the probability that a customer will do Y, if we contact them and talk about Z?"*            | **P(churn               |
-| **Uplift modelling**              | *"What is the incremental probability that a customer will do Y if we contact them and talk about Z?"* | **P(churn               |
-
+| Approach | Key question | Theoretical problem |
+|---|---|---|
+| Propensity modelling | What is the probability that a customer will do Y? | P(churn \| customer features) |
+| Response modelling | What is the probability that a customer will do Y, if we contact them? | P(churn \| contacted + customer features) |
+| Contextual response modelling | What is the probability that a customer will do Y, if we contact them and talk about Z? | P(churn \| contacted + customer features + action/message) |
+| Uplift modelling | What is the incremental probability that a customer will do Y if we contact them and talk about Z? | P(churn \| contacted + customer features + action/message) - P(churn \| no contact + customer features + action/message) |
 
 Because of how strong GCG is as a baseline, uplift modelling becomes super important because we account for GCG as part of the modelling objective. Uplift modelling accounts for the probably of churn given not contacted, which is exactly the behaviour of GCG. In my previous case, not accounting for GCG had material revenue issues: we ended up awakening sleeping customers who realized that their current deal is not a good one and thus downgraded. In this case (which is a downgrade), it's important to account for both probability of take up AND revenue. To account for both, the cleanest way is to calculate expected revenue (which is prob * revenue). But in practice, this becomes complicated as it requires having two models (classifier + regressor). I suggest to start with the mathematically sound prob * revenue, before trying something funky like top 3 deciles of classifier going into regressor. Ah, I digress.
 

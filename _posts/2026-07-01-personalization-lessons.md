@@ -1,12 +1,10 @@
 ---
-
-## title: 'Lessons on Personalization'
-
+title: 'Lessons on Personalization'
 date: 2026-07-01
 permalink: /posts/2026/07/perso-lessons
 tags:
-
 - data science
+---
 
 Having done about 1.5 years of personalization across multiple clients, I wanted to consolidate my takeaways here. Personalization is here to stay because of it's contextual nature; hopefully someone doing perso will find them useful!
 
